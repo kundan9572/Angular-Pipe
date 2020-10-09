@@ -1,0 +1,62 @@
+<header>Pipes In Angular</header>
+
+<div class="container">
+    <div class="event">
+        <h1>Date Pipes</h1>
+        <button (click) = date() class="field"> Submit</button>
+        <p class="field">
+           Full Date:  {{ CurrentDate | date: 'fulldate'}} <br>
+           Short Date: {{ CurrentDate | date: 'short'}} <br>
+           Medium Date: {{ CurrentDate | date: 'medium'}} <br>
+           Time: {{CurrentDate | date: 'shortTime'}} <br>
+           Time: {{CurrentDate | date: 'longTime'}} <br>
+           Time: {{CurrentDate | date: 'fullTime'}} <br>
+        </p>
+    </div>
+
+    <div class="event">
+        <h1>Number Pipes</h1>
+        <input type="text" #numpipe (ngModel)="numberFormat"> 
+        <button (click) = numFormat(numpipe.value) class="field"> Submit</button>
+        <p class="field">
+            No Formatting: {{numberFormat }} <br>
+            2 Decimal Place: {{numberFormat | number: '2.2-2' }}
+        </p>
+    </div>
+
+    <div class="event">
+        <h1>Currency Pipes</h1>
+        <input type="text" #currency (ngModel)="currNum">
+        <button class="field" (click) = currencyFormat(currency.value)>Submit</button>
+        <p class="field">
+            No Formatting: {{currNum}} <br>
+            INR(S):  {{currNum | currency: 'INR'}} <br>
+            INR: {{currNum | currency: 'INR':'code'}} <br>
+            USD(S):  {{currNum | currency: 'USD'}} <br>
+            USD : {{currNum | currency: 'USD':'code'}} <br>
+            EURO: {{currNum | currency: 'EUR'}}
+        </p>
+    </div>
+
+    <div class="event">
+        <h1>String Related Pipes </h1>
+        <input type="text" #names (ngModel)="name">
+        <button class="field" (click) = pipes(names.value)>Submit</button>
+        <p class="field">
+          Actual Message: {{ name }}  
+          Uppercase:  {{name | uppercase}} <br>         
+          Lowercase:   {{name | lowercase}}
+        </p>
+    </div>
+
+    <div class="event">
+        <h1>Percentage Pipes</h1>
+        <input type="text" #npercent (ngModel)="num">
+        <button (click) = percentage(npercent.value) class="field"> Submit</button>
+        <p class="field">
+            Actual Number: {{num}} <br>
+            2 Place Formatting: {{num | percentage: '2.3-4'}} <br>
+            2 Place Formatting: {{num | percentage: '2.3-4':'fr'}}
+        </p>
+    </div>
+</div>

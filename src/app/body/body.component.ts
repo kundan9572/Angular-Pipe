@@ -15,7 +15,7 @@ export class BodyComponent implements OnInit {
   ngOnInit(): void {
     this.todayDate = new Date();
     this.amount = 100;
-    this.message = 'Learning Angular is fun';
+    this.message = 'Chennai Super King';
   }
 
   

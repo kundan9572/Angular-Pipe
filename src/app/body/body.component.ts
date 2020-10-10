@@ -6,36 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./body.component.css']
 })
 export class BodyComponent implements OnInit {
-
-  CurrentDate: number ;
-  numberFormat: number = 0;
-  num: number = 0;
-  name: string='';
-  currNum: number = 0;
+  public todayDate: Date;
+  public amount: number;
+  public message: string;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.todayDate = new Date();
+    this.amount = 100;
+    this.message = 'Learning Angular is fun';
   }
 
-  date(): void{
-    this.CurrentDate = Date.now();
-  }
-
-  numFormat(numpipe: number): void{
-    this.numberFormat = numpipe;
-  }
-
-  percentage(npercent: number): void{
-    this.num = npercent;
-  }
-
-  pipes(name: string): void{
-    this.name = name;
-  }
-
-  currencyFormat(currency: number): void{
-    this.currNum = currency;
-  }
+  
 
 }
